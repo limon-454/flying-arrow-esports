@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <title>FLYING ARROW E-SPORTS | Tournament Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">FA</span><span>FLYING ARROW <small>E-SPORTS</small></span></a>
+    <a class="nav-link" href="#register">Register Team</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BANGLADESH • FREE FIRE ESPORTS</p>
+        <h1>ENTER THE<br><span>BATTLE.</span></h1>
+        <p class="hero-text">Register your squad for the next FLYING ARROW E-SPORTS tournament.</p>
+        <a class="primary-btn" href="#register">REGISTER NOW <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring ring-one"></div><div class="ring ring-two"></div>
+        <div class="hero-emblem">FA<span>✦</span></div>
+        <div class="hero-caption">SQUAD UP / STAND OUT</div>
+      </div>
+    </section>
+
+    <section class="info-strip">
+      <div><b>4</b><span>PLAYERS PER TEAM</span></div>
+      <div><b>24/7</b><span>ONLINE REGISTRATION</span></div>
+      <div><b>FA</b><span>COMPETE WITH HONOUR</span></div>
+    </section>
+
+    <section class="form-section" id="register">
+      <div class="section-heading">
+        <p class="eyebrow">YOUR NEXT MATCH STARTS HERE</p>
+        <h2>TEAM <span>REGISTRATION</span></h2>
+        <p>সব তথ্য সঠিকভাবে পূরণ করে সাবমিট করুন।</p>
+      </div>
+
+      <form id="registrationForm" class="panel">
+        <div class="form-grid">
+          <label class="field full">Tournament Name
+            <input name="tournamentName" required maxlength="80" placeholder="যেমন: FA WEEKLY SCRIM">
+          </label>
+          <label class="field">Team Name
+            <input name="teamName" required maxlength="40" placeholder="আপনার টিমের নাম">
+          </label>
+          <label class="field">Team Leader Name
+            <input name="leaderName" required maxlength="40" placeholder="ক্যাপ্টেনের নাম">
+          </label>
+          <label class="field">WhatsApp Number
+            <input name="whatsapp" required inputmode="tel" maxlength="20" placeholder="01XXXXXXXXX">
+          </label>
+          <label class="field">Payment Method
+            <select name="paymentMethod" required>
+              <option value="">নির্বাচন করুন</option>
+              <option>bKash</option><option>Nagad</option>
+            </select>
+          </label>
+          <div class="field full"><div class="field-label">PLAYER DETAILS</div></div>
+          <div class="player-card">
+            <b>PLAYER 01 · LEADER</b>
+            <label class="field">Player Name<input name="p1name" required maxlength="40"></label>
+            <label class="field">Free Fire UID<input name="p1uid" required inputmode="numeric" maxlength="20"></label>
+          </div>
+          <div class="player-card">
+            <b>PLAYER 02</b>
+            <label class="field">Player Name<input name="p2name" required maxlength="40"></label>
+            <label class="field">Free Fire UID<input name="p2uid" required inputmode="numeric" maxlength="20"></label>
+          </div>
+          <div class="player-card">
+            <b>PLAYER 03</b>
+            <label class="field">Player Name<input name="p3name" required maxlength="40"></label>
+            <label class="field">Free Fire UID<input name="p3uid" required inputmode="numeric" maxlength="20"></label>
+          </div>
+          <div class="player-card">
+            <b>PLAYER 04</b>
+            <label class="field">Player Name<input name="p4name" required maxlength="40"></label>
+            <label class="field">Free Fire UID<input name="p4uid" required inputmode="numeric" maxlength="20"></label>
+          </div>
+          <label class="field full">Transaction ID
+            <input name="transactionId" required maxlength="60" placeholder="পেমেন্টের TrxID লিখুন">
+          </label>
+        </div>
+        <label class="check-line"><input type="checkbox" required> আমি নিশ্চিত করছি যে দেওয়া তথ্য সঠিক।</label>
+        <button class="primary-btn submit-btn" id="submitBtn" type="submit">SUBMIT REGISTRATION <span>↗</span></button>
+        <p id="formMessage" class="message" role="status"></p>
+        <p class="small-note">আপনার রেজিস্ট্রেশন Admin যাচাই করার পর Confirm হবে।</p>
+      </form>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> FLYING ARROW E-SPORTS</span><a href="admin.html">ADMIN LOGIN</a></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

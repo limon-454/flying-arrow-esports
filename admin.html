@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FA Admin Dashboard</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">FA</span><span>FLYING ARROW <small>ADMIN PANEL</small></span></a><a class="nav-link" href="index.html">PUBLIC FORM ↗</a></header>
+<main class="admin-wrap">
+  <section id="loginPanel" class="panel admin-panel">
+    <p class="eyebrow">RESTRICTED ACCESS</p><h1>ADMIN <span style="color:var(--blue)">LOGIN</span></h1>
+    <form id="loginForm">
+      <label class="field">Admin Email<input id="email" type="email" required autocomplete="username"></label><br>
+      <label class="field">Password<input id="password" type="password" required autocomplete="current-password"></label>
+      <button class="primary-btn submit-btn" type="submit">LOGIN TO DASHBOARD ↗</button>
+      <p id="loginMessage" class="message"></p>
+    </form>
+  </section>
+  <section id="dashboard" hidden>
+    <p class="eyebrow">TOURNAMENT CONTROL CENTER</p><h1>REGISTRATION <span style="color:var(--blue)">MANAGER</span></h1>
+    <div class="admin-actions"><p id="countText">Loading registrations...</p><button id="logoutBtn" class="secondary-btn">LOG OUT</button></div>
+    <div class="table-wrap"><table><thead><tr><th>TEAM / TOURNAMENT</th><th>LEADER</th><th>CONTACT</th><th>PAYMENT</th><th>PLAYERS</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="registrationRows"></tbody></table></div>
+    <p id="dashboardMessage" class="message"></p>
+  </section>
+</main>
+<script type="module" src="admin.js"></script>
+</body></html>

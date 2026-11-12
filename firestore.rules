@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == "YOUR_ADMIN_EMAIL@example.com";
+    }
+
+    match /registrations/{registrationId} {
+      // Public users can submit a registration but cannot read or edit records.
+      allow create: if request.resource.data.keys().hasAll([
+          'tournamentName','teamName','leaderName','whatsapp',
+          'paymentMethod','transactionId','players','status',
+          'paymentStatus','createdAt'
+        ])
+        && request.resource.data.tournamentName is string
+        && request.resource.data.tournamentName.size() > 0
+        && request.resource.data.teamName is string
+        && request.resource.data.teamName.size() > 0
+        && request.resource.data.leaderName is string
+        && request.resource.data.whatsapp is string
+        && request.resource.data.transactionId is string
+        && request.resource.data.players is list
+        && request.resource.data.players.size() == 4
+        && request.resource.data.status == 'pending'
+        && request.resource.data.paymentStatus == 'pending';
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}
